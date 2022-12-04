@@ -28,7 +28,7 @@ export function registerUser(data, history) {
       const { response } = error;
       console.error(response);
       dispatch({ type: REGISTER_USER_FAILURE });
-      toast(response?.data?.message);
+      toast(response?.data?.message || "Something went wrong.");
     }
   };
 }
@@ -49,7 +49,7 @@ export function loginUser(data, history) {
       const { response } = error;
       console.error(response);
       dispatch({ type: LOGIN_USER_FAILURE });
-      toast(response?.data?.message);
+      toast(response?.data?.message || "Something went wrong.");
     }
   };
 }
